@@ -1,17 +1,39 @@
 import { Component } from "react";
+import Button from "react-bootstrap/Button"
 
 class Header extends Component {
 
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
+    this.state = {
+      liked: 0
+    }
   }
+
+  handleClick = () => {
+    this.setState({liked: this.state.liked + 1});
+}
 
   render(){
     return(
-      <nav>
-        <h2>Horned Beast Application</h2>
-        <img src = "http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg" alt = "A unicorn and a narwhal nuzzling their horns"></img>
-      </nav>
+      <div className = "beasts">
+        <p>{this.props.title}</p>
+        <img width = "300px"
+          src = {this.props.image_url} 
+          alt = {this.props.description}
+          >
+        </img>
+        <div>
+          <Button
+            variant="primary"
+            onClick={this.handleClick}
+          >
+            hello
+          </Button>
+          <p>{this.state.liked}</p>
+        </div>
+        <p>{this.props.description}</p>
+      </div>
       ) 
   }
 }
