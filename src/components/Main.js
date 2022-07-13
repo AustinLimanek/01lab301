@@ -12,19 +12,18 @@ class Main extends Component {
     this.state = {
       gallery: list,
     }
-  }
-        
+  } 
 
   render(){
     return(
       <div>
-        {console.log(typeof list)}
-        {this.state.gallery.forEach(photo => 
-          <HornedBeast 
-            id={photo._id} 
+        {this.state.gallery.map(photo => 
+          <HornedBeast
+            key={photo._id} 
             image_url={photo.image_url}
             title={photo.title}
-            description={photo.description}>
+            description={photo.description}
+          >
           </HornedBeast>
         )}
       </div>
