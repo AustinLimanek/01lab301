@@ -1,5 +1,6 @@
 import { Component } from "react";
 import Button from "react-bootstrap/Button"
+import Card from "react-bootstrap/Card"
 
 class Header extends Component {
 
@@ -16,13 +17,12 @@ class Header extends Component {
 
   render(){
     return(
-      <div className = "beasts">
-        <p>{this.props.title}</p>
-        <img width = "300px"
+      <Card style={{width: '18rem', height: '30rem'}}>
+        <Card.Img variant="top" width='20px'
           src = {this.props.image_url} 
           alt = {this.props.description}
-          >
-        </img>
+          />
+        <Card.Title>{this.props.title}</Card.Title>
         <div>
           <Button
             variant="primary"
@@ -33,7 +33,7 @@ class Header extends Component {
           <p>{this.state.liked}</p>
         </div>
         <p>{this.props.description}</p>
-      </div>
+      </Card>
       ) 
   }
 }

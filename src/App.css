@@ -1,5 +1,11 @@
-.App.js{
-  
+.App.js {
+  text-align: center;
+}
+
+main {
+  display: flex;
+  text-align: center;
+  background: black;
 }
 
 .beasts{
