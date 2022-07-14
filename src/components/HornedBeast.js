@@ -11,31 +11,36 @@ class Header extends Component {
     }
   }
 
-  handleClick = () => {
-    this.setState({liked: this.state.liked + 1});
-}
+handleClick = (e) => {
+  this.setState({liked: this.state.liked + 1});
+};
 
-  render(){
-    return(
-      <Card style={{width: '18rem', height: '30rem'}}>
+handlePicClick = (e) => {
+  this.props.handlePicClick(this);
+};
+
+render(){
+  return (
+    <Card style={{ width: '18rem', height: '25rem' }}>
+      <div onClick={this.handlePicClick}>
         <Card.Img variant="top" width='20px'
-          src = {this.props.image_url} 
-          alt = {this.props.description}
-          />
-        <Card.Title>{this.props.title}</Card.Title>
-        <div>
-          <Button
-            variant="primary"
-            onClick={this.handleClick}
-          >
-            hello
-          </Button>
-          <p>{this.state.liked}</p>
-        </div>
-        <p>{this.props.description}</p>
-      </Card>
-      ) 
-  }
+          src={this.props.image_url}
+          alt={this.props.description}
+        />
+      </div>
+      <Card.Title>{this.props.title}</Card.Title>
+      <div>
+        <Button
+          variant="primary"
+          onClick={this.handleClick}
+        >
+          hello
+        </Button>
+        <p>{this.state.liked}</p>
+      </div>
+    </Card>
+  )
+}
 }
 
 export default Header;

@@ -1,28 +1,25 @@
 import { Component } from "react";
 import HornedBeast from "./HornedBeast.js"
-import Header from "./Header.js"
-import Footer from "./Footer.js"
-import list from "../data.json"
 
 class Main extends Component {
 
-  constructor(){
-    console.log(list);
-    super();
+  constructor(props){
+    super(props);
     this.state = {
-      gallery: list,
+      beastList: this.props.list
     }
   } 
 
   render(){
     return(
       <div>
-        {this.state.gallery.map(photo => 
+        {this.state.beastList.map(photo => 
           <HornedBeast
             key={photo._id} 
             image_url={photo.image_url}
             title={photo.title}
             description={photo.description}
+            handlePicClick={this.props.handlePicClick}
           >
           </HornedBeast>
         )}
