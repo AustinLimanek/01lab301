@@ -1,8 +1,11 @@
-.App.js {
+.App {
+  background-color: rgba(69, 143, 180, 0.644);
   text-align: center;
+  padding: 0 5%;
 }
 
 main {
+  margin: 0 auto;
   display: flex;
   text-align: center;
   background: black;
@@ -10,4 +13,29 @@ main {
 
 .beasts{
   display: block;
+}
+
+HornedBeast {
+  text-align: center;
+}
+
+.cards {
+  text-align: center;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+.image {
+  border: black line;
+
+}
+
+.like {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 20px;
+}
+
+.title {
+  padding: 20px;
 }
