@@ -1,11 +1,11 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Component } from "react";
 import './App.css';
+import beastList from "./data.json"
 import Header from './components/Header';
 import Main from './components/Main';
-import Footer from './components/Footer';
 import SelectedBeast from './components/SelectedBeast';
-import { Component } from "react";
-import beastList from "./data.json"
+import Footer from './components/Footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   

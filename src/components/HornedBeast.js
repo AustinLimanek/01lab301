@@ -21,20 +21,23 @@ handlePicClick = (e) => {
 
 render(){
   return (
-    <Card style={{ width: '18rem', height: '25rem' }}>
+    <Card style={{ width: '18rem', height: '25rem' }} className="cards">
       <div onClick={this.handlePicClick}>
         <Card.Img variant="top" width='20px'
           src={this.props.image_url}
           alt={this.props.description}
+          className = "image"
         />
       </div>
-      <Card.Title>{this.props.title}</Card.Title>
-      <div>
+      <Card.Title className="title">
+        {this.props.title}
+      </Card.Title>
+      <div className="like">
         <Button
           variant="primary"
           onClick={this.handleClick}
         >
-          hello
+          Like
         </Button>
         <p>{this.state.liked}</p>
       </div>

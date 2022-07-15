@@ -8,7 +8,7 @@ class SelectedBeast extends Component {
             <Modal 
               show={this.props.showing} 
               onHide={this.props.exitModal} 
-              size="xl"
+              size="md"
             >
                 <Modal.Header closeButton>
                     <Modal.Title>
